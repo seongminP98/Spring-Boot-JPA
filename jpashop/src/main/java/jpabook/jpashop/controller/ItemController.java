@@ -63,17 +63,20 @@ public class ItemController {
     }
 
     @PostMapping("/items/{itemId}/edit")
-    public String updateItem(@ModelAttribute("form") BookForm form) {
+    public String updateItem(@PathVariable long itemId, @ModelAttribute("form") BookForm form) {
 
-        Book book = new Book();
-        book.setStockQuantity(form.getStockQuantity());
-        book.setIsbn(form.getIsbn());
-        book.setAuthor(form.getAuthor());
-        book.setPrice(form.getPrice());
-        book.setName(form.getName());
-        book.setId(form.getId());
+        //준영속 상태임. 이미 DB에 들어갔다 나온. DB에 id값이 있는.
+//        Book book = new Book();
+//        book.setStockQuantity(form.getStockQuantity());
+//        book.setIsbn(form.getIsbn());
+//        book.setAuthor(form.getAuthor());
+//        book.setPrice(form.getPrice());
+//        book.setName(form.getName());
+//        book.setId(form.getId());
 
-        itemService.saveItem(book);
+//        itemService.saveItem(book);
+
+        itemService.updateItem(itemId, form.getName(), form.getPrice(), form.getStockQuantity());
         return "redirect:/items";
 
     }
