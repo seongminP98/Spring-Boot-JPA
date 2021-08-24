@@ -68,10 +68,16 @@ public class JpaMain {
             System.out.println("======================");
 */
 
+/*
             //데이터를 가져오고 값만 바꿔오면 수정됨. 변경감지(Dirty checking). 트랜잭션 커밋하는 시점에 업데이트 쿼리 날림.
             Member member = em.find(Member.class, 150L);
-            member.setName("ZZZZZ"); //
+            member.setName("ZZZZZ");
+*/
+            Member member = new Member(202L, "member-202");
+            em.persist(member);
 
+            em.flush(); //플러시 강제로 호출. 이때 DB에 쿼리가 날라감. 1차캐시 유지됨.
+            System.out.println("===================");
 
 
             tx.commit();
