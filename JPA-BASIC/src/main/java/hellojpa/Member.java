@@ -20,7 +20,7 @@ import java.util.Date;
         sequenceName = "MEMBER_SEQ", //매핑할 데이터베이스 시퀀스 이름
         initialValue = 1, allocationSize = 50) //미리 시퀀스 값을 50개 땡겨옴. 기본값이 50
 public class Member {
-    
+
 /*
     //@GeneratedValue(strategy = GenerationType.IDENTITY) //mysql 에서 AUTO_ INCREMENT
     //@GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "member_seq_generator") //오라클, PostgreSQL, DB2, H2 에서 사용
