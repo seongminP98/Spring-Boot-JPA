@@ -80,6 +80,7 @@ public class JpaMain {
             em.flush(); //플러시 강제로 호출. 이때 DB에 쿼리가 날라감. 1차캐시 유지됨.
             System.out.println("===================");
 */
+/*
             Member member = em.find(Member.class, 150L);
             //member는 영속상태.
             member.setName("AAAA");
@@ -87,6 +88,7 @@ public class JpaMain {
             //em.detach(member); //member는 준영속상태가 됨. 트랜잭션 커밋해도 아무일도 일어나지 않음. AAAA로 변경안됨.
             em.clear(); //영속성 컨텍스트를 완전히 초기화
             Member member2 = em.find(Member.class, 150L); //다시 영속성컨텍스트를 올림.
+*/
 
 
             tx.commit();
