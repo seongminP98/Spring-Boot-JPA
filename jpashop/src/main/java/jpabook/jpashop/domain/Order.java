@@ -1,101 +1,54 @@
 package jpabook.jpashop.domain;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.aspectj.weaver.ast.Or;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import static javax.persistence.FetchType.*;
 
 @Entity
-@Table(name = "orders")
-@Getter
-@Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Table(name = "ORDERS")
 public class Order {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "order_id")
+    @Id @GeneratedValue
+    @Column(name = "ORDER_ID")
     private Long id;
 
-    @ManyToOne(fetch = LAZY) //지연로딩 @XToOne은 default가 EAGER(즉시로딩)이다. 즉시로딩 쓰면안됨.
-    @JoinColumn(name = "member_id") //fk의 이름이 member_id //연관관계의 주인.
-    private Member member;
+    @Column(name = "MEMBER_ID")
+    private Long memberId; //객체지향스럽지 않음.
+//    private Member member; //이게 객제지향스러움.
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems = new ArrayList<>();
-
-    @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "delivery_id")
-    private Delivery delivery;
-
-    private LocalDateTime orderDate; //주문시간
+    private LocalDateTime orderDate;
 
     @Enumerated(EnumType.STRING)
-    private OrderStatus status; //주문상태 [ORDER, CANCEL]
+    private OrderStatus status;
 
-    //==연관관계계 메서드==//
-    public void setMember(Member member) {
-        this.member = member;
-        member.getOrder().add(this);
+    public Long getId() {
+        return id;
     }
 
-    public void addOrderItem(OrderItem orderItem) {
-        orderItems.add(orderItem);
-        orderItem.setOrder(this);
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setDelivery(Delivery delivery) {
-        this.delivery = delivery;
-        delivery.setOrder(this);
+    public Long getMemberId() {
+        return memberId;
     }
 
-    //==생성 메서드==//
-    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
-        Order order = new Order();
-        order.setMember(member);
-        order.setDelivery(delivery);
-        for (OrderItem orderItem : orderItems) {
-            order.addOrderItem(orderItem);
-        }
-        order.setStatus(OrderStatus.ORDER);
-        order.setOrderDate(LocalDateTime.now());
-        return order;
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
     }
 
-    //==비즈니스 로직==//
-
-    /**
-     * 주문 취소
-     */
-    public void cancel() {
-        if (delivery.getStatus() == DeliveryState.COMP) { //이미 배송완료
-            throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능합니다.");
-        }
-
-        this.setStatus(OrderStatus.CANCEL);
-        for (OrderItem orderItem : orderItems) {
-            orderItem.cancel();
-        }
+    public LocalDateTime getOrderDate() {
+        return orderDate;
     }
 
-    //==조회 로직==//
-    /**
-     * 전체 주문 가격 조회
-     */
-    public int getTotalPrice() {
-        int totalPrice = 0;
-        for (OrderItem orderItem : orderItems) {
-            totalPrice += orderItem.getTotalPrice();
-        }
-        return totalPrice;
+    public void setOrderDate(LocalDateTime orderDate) {
+        this.orderDate = orderDate;
     }
 
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
 }

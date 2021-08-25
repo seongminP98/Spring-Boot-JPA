@@ -1,59 +1,62 @@
 package jpabook.jpashop.domain;
 
-import jpabook.jpashop.domain.item.Item;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.*;
-
-import static javax.persistence.FetchType.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED) //아래 있는 생성 메서드로만 생성하게 막아놓음.
 public class OrderItem {
 
     @Id @GeneratedValue
-    @Column(name = "order_item_id")
+    @Column(name = "ORDER_ITEM_ID")
     private Long id;
 
-    @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "item_id")
-    private Item item;
+    @Column(name = "ORDER_ID")
+    private Long orderId;
+    @Column(name = "ITEM_ID")
+    private Long itemId;
 
+    private int orderPrice;
+    private int count;
 
-    @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "order_id")
-    private Order order;
-
-    private int orderPrice; //주문 가격
-    private int count; //주문 수량
-
-
-    //==생성 메서드==//
-    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
-        OrderItem orderItem = new OrderItem();
-        orderItem.setItem(item);
-        orderItem.setOrderPrice(orderPrice);
-        orderItem.setCount(count);
-
-        item.removeStock(count);
-        return orderItem;
+    public Long getId() {
+        return id;
     }
 
-    //==비즈니스 로직==//
-    public void cancel() {
-        getItem().addStock(count);
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    //==조회 로직==//
+    public Long getOrderId() {
+        return orderId;
+    }
 
-    /**
-     * 주문상품 전체 가격 조회
-     */
-    public int getTotalPrice() {
-        return getOrderPrice() * getCount();
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public Long getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
+    }
+
+    public int getOrderPrice() {
+        return orderPrice;
+    }
+
+    public void setOrderPrice(int orderPrice) {
+        this.orderPrice = orderPrice;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
