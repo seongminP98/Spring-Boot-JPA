@@ -11,11 +11,17 @@ public class Team {
     @GeneratedValue
     @Column(name = "TEAM_ID")
     private Long id;
-
     private String name;
 
+    @OneToMany //일대다
+    @JoinColumn(name = "TEAM_ID")
+    private List<Member> members = new ArrayList<>();
+
+/*
     @OneToMany(mappedBy = "team") //Member 클래스에 있는 team //mappedBy 있는건 읽기만 가능. team이 연관관계 주인.
     private List<Member> members = new ArrayList<>(); //초기화 해줌. 관례
+*/
+
 /* Member 에서 연관관계 편의 메소드 사용. 하나만 사용.
     public void addMember(Member member) { //연관관계 편의 메소드
        member.setTeam(this);
@@ -46,4 +52,5 @@ public class Team {
     public void setMembers(List<Member> members) {
         this.members = members;
     }
+
 }
