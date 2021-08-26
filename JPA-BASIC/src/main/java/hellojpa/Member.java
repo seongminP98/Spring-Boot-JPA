@@ -41,6 +41,12 @@ public class Member {
         return team;
     }
 
+    //setter대신 이름바꿔 사용.
+    public void changeTeam(Team team) { //연관관계 편의 메소드. 주인쪽만 아니라 주인이 아닌쪽도 값 세팅.
+        this.team = team;
+        team.getMembers().add(this); //team.getMembers().add(member)
+    }
+
     public void setTeam(Team team) {
         this.team = team;
     }
