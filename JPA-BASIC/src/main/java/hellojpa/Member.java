@@ -1,13 +1,14 @@
 package hellojpa;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
 
-public class Member {
+public class Member extends BaseEntity{
     @Id
     @GeneratedValue
     @Column(name = "MEMBER_ID")
@@ -22,12 +23,6 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<MemberProduct> memberProducts = new ArrayList<>();
-
-/*
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID") //조인하는 컬럼. FK 가 TEAM_ID. 연관관계 매핑.
-    private Team team;
-*/
 
     public Long getId() {
         return id;
@@ -45,18 +40,5 @@ public class Member {
         this.username = username;
     }
 
-/*    public Team getTeam() {
-        return team;
-    }
-
-    //setter대신 이름바꿔 사용.
-    public void changeTeam(Team team) { //연관관계 편의 메소드. 주인쪽만 아니라 주인이 아닌쪽도 값 세팅.
-        this.team = team;
-        team.getMembers().add(this); //team.getMembers().add(member)
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }*/
 }
 

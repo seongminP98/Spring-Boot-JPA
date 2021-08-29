@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Team {
+public class Team extends BaseEntity{
 
     @Id
     @GeneratedValue
@@ -17,17 +17,7 @@ public class Team {
     @JoinColumn(name = "TEAM_ID")
     private List<Member> members = new ArrayList<>();
 
-/*
-    @OneToMany(mappedBy = "team") //Member 클래스에 있는 team //mappedBy 있는건 읽기만 가능. team이 연관관계 주인.
-    private List<Member> members = new ArrayList<>(); //초기화 해줌. 관례
-*/
 
-/* Member 에서 연관관계 편의 메소드 사용. 하나만 사용.
-    public void addMember(Member member) { //연관관계 편의 메소드
-       member.setTeam(this);
-        members.add(member);
-    }
-*/
 
     public Long getId() {
         return id;
