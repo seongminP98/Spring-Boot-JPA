@@ -1,1 +1,4 @@
-# Spring-Boot-JPA
+# 스프링부트와 JPA
+
+실전1-스프링 부트와 JPA 활용
+기본편-자바 ORM 표준 JPA 프로그래밍
