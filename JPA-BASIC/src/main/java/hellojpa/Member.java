@@ -1,13 +1,10 @@
 package hellojpa;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 @Entity
-
 public class Member extends BaseEntity{
     @Id
     @GeneratedValue
@@ -17,12 +14,19 @@ public class Member extends BaseEntity{
     @Column(name = "USERNAME")
     private String username;
 
-    @OneToOne
-    @JoinColumn(name = "LOCKER_ID")
-    private Locker locker;
+    public Team getTeam() {
+        return team;
+    }
 
-    @OneToMany(mappedBy = "member")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    //LAZY: 지연로딩. team을 프록시 객체로 조회함.
+    //EAGER: 즉시로딩. team을 실제 엔티티로 가져옴.
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
 
     public Long getId() {
         return id;
