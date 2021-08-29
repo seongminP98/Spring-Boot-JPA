@@ -87,6 +87,8 @@ public class JpaMain {
             System.out.println("findMember.username = " + findMember3.getUsername());
             //Username을 알기 위해서 DB에 쿼리문 날려 조회.
   */
+/*지연로딩과 즉시로딩
+
             Team team = new Team();
             team.setName("teamA");
             em.persist(team);
@@ -129,16 +131,28 @@ public class JpaMain {
              * 1. fetch join : 런타임에 내가 원하는 애들을 동적으로 선택해 가져옴. 뒤에 나옴.
              * 2. 배치 사이즈
              */
-
-
-
-
-/*
+/*지연로딩
             System.out.println("m = " + m.getTeam().getClass()); //team은 프록시로 나옴.
             System.out.println("===================");
             m.getTeam().getName(); //이 때 쿼리문 날림
             System.out.println("===================");
 */
+
+            Child child1 = new Child();
+            Child child2 = new Child();
+
+            Parent parent = new Parent();
+            parent.addChild(child1);
+            parent.addChild(child2);
+
+            em.persist(parent); //cascade로 child1, child2도 persist 됨. cascade 없으면 따로 em.persist해줘야함.
+
+            em.flush();
+            em.clear();
+
+            Parent findParent = em.find(Parent.class, parent.getId());
+            findParent.getChildList().remove(0);
+
 
             tx.commit();
         } catch (Exception e) {
