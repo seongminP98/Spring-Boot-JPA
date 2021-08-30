@@ -3,9 +3,8 @@ package hellojpa;
 import javax.persistence.*;
 
 
-
 @Entity
-public class Member extends BaseEntity{
+public class Member {
     @Id
     @GeneratedValue
     @Column(name = "MEMBER_ID")
@@ -14,19 +13,13 @@ public class Member extends BaseEntity{
     @Column(name = "USERNAME")
     private String username;
 
-    public Team getTeam() {
-        return team;
-    }
+    //기간 Peroid
+    @Embedded
+    private Period workPeriod;
 
-    public void setTeam(Team team) {
-        this.team = team;
-    }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    //LAZY: 지연로딩. team을 프록시 객체로 조회함.
-    //EAGER: 즉시로딩. team을 실제 엔티티로 가져옴.
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
+    //주소
+    @Embedded
+    private Address homeAddress;
 
     public Long getId() {
         return id;
@@ -44,5 +37,20 @@ public class Member extends BaseEntity{
         this.username = username;
     }
 
+    public Period getWorkPeriod() {
+        return workPeriod;
+    }
+
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
+    }
+
+    public Address getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
+    }
 }
 
