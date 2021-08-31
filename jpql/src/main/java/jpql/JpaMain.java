@@ -15,10 +15,19 @@ public class JpaMain {
 
         try{
 
+            Team team = new Team();
+            team.setName("teamA");
+            em.persist(team);
+
             Member member = new Member();
-            member.setUsername("member1");
+            member.setUsername("관리자");
             member.setAge(10);
+            member.setType(MemberType.ADMIN);
+
+            member.setTeam(team);
+
             em.persist(member);
+
 
 /*type query, query / 결과 조회
             TypedQuery<Member> query1 = em.createQuery("select m from Member m", Member.class);
@@ -36,11 +45,92 @@ public class JpaMain {
             //없거나 여러개면? Exception터짐
             System.out.println("singleResult = " + singleResult);
 */
-            //이름 기준 파라미터 바인딩. 위치기반은 사용하지 말기
+/*이름 기준 파라미터 바인딩. 위치기반은 사용하지 말기
             Member result = em.createQuery("select m from Member m where m.username = :username", Member.class)
                     .setParameter("username", "member1")
                     .getSingleResult();
             System.out.println("singleResult = " + result.getUsername());
+*/
+
+
+            em.flush();
+            em.clear();
+/*엔티티 프로젝션
+            List<Member> result = em.createQuery("select m from Member m", Member.class)
+                    .getResultList();
+            //영속성 컨텍스트에서 관리됨.
+            Member findMember = result.get(0);
+            findMember.setAge(20);
+
+
+
+            List<Team> result1 = em.createQuery("select m.team from Member m", Team.class)
+                    .getResultList();
+            List<Team> result2 = em.createQuery("select t from Member m join Team m.team t", Team.class)
+                    .getResultList(); //이렇게 조인을 넣어서 사용하는게 좋음. join이 보이는게 좋음.
+*/
+/*임베디드 타입 프로젝션
+            em.createQuery("select o.address from Order o", Address.class)
+                    .getResultList();
+*/
+/*프로젝션 여러 값 조회. Object[] 타입으로 조회. 별로 안좋음.
+            List<Object[]> resultList = em.createQuery("select m.username, m.age from Member m")
+                    .getResultList();
+
+            Object[] result = resultList.get(0);
+            System.out.println("username = " + result[0]);
+            System.out.println("age = " + result[1]);
+*/
+/*new 명령어로 조회. 단순 값을 DTO로 바로 조회. 패키지 명을 포함한 전체 클래스 명 입력. 순서와 타입이 일치하는 생성자 필요.
+            List<MemberDTO> result = em.createQuery("select new jpql.MemberDTO(m.username, m.age) from Member m", MemberDTO.class)
+                    .getResultList();
+            MemberDTO memberDTO = result.get(0);
+            System.out.println("memberDTO = " + memberDTO.getUsername());
+            System.out.println("memberDTO = " + memberDTO.getAge());
+*/
+/*조인
+            String query = "select m from Member m left join m.team t on t.name = 'teamA'";
+            String query2 = "select m from Member m left join Team t on m.username = t.name";
+*/
+/*select에 서브쿼리 사용
+            String query = "select (select avg(m1.age) From Member m1) as avgAge from Member m left join Team t on m.username = t.name";
+*/
+/*JPQL 타입 표현과 기타식
+            String query = "select m.username, 'HELLO', TRUE From Member m" +
+                    "where m.type = :userType";
+
+            List<Object[]> result = em.createQuery(query)
+                    .setParameter("userType", MemberType.ADMIN)
+                    .getResultList();
+
+            for (Object[] objects : result) {
+                System.out.println("objects = " + objects[0]);
+                System.out.println("objects = " + objects[1]);
+                System.out.println("objects = " + objects[2]);
+            }
+*/
+/*조건식 - case식            //문자열 더하기 할 때 띄어쓰기 조심!
+            String query = "select " +
+                    "case when m.age <= 10 then '학생요금' " +
+                    "     when m.age >= 60 then '경로요금' " +
+                    "     else '일반요금' " +
+                    "end " +
+                    "from Member m";
+*/
+/*COALESCE
+            String query = "select coalesce(m.username, '이름 없는 회원') from Member m";
+*/
+/*nullif : username이 관리자면 null을 반환. 나머지는 username 반환.
+            String query = "select nullif(m.username, '관리자') as username " +
+                    "From Member m ";
+*/
+            String query = "select locate('de', 'abcdefg') From Member m";
+
+            List<Integer> result = em.createQuery(query, Integer.class)
+                    .getResultList();
+            for (Integer s : result) {
+                System.out.println("s = " + s);
+            }
 
 
             tx.commit();
