@@ -20,7 +20,7 @@ public class JpaMain {
             em.persist(team);
 
             Member member = new Member();
-            member.setUsername("teamA");
+            member.setUsername("관리자");
             member.setAge(10);
             member.setType(MemberType.ADMIN);
 
@@ -100,6 +100,7 @@ public class JpaMain {
 /*select에 서브쿼리 사용
             String query = "select (select avg(m1.age) From Member m1) as avgAge from Member m left join Team t on m.username = t.name";
 */
+/*JPQL 타입 표현과 기타식
             String query = "select m.username, 'HELLO', TRUE From Member m" +
                     "where m.type = :userType";
 
@@ -111,6 +112,27 @@ public class JpaMain {
                 System.out.println("objects = " + objects[0]);
                 System.out.println("objects = " + objects[1]);
                 System.out.println("objects = " + objects[2]);
+            }
+*/
+/*조건식 - case식            //문자열 더하기 할 때 띄어쓰기 조심!
+            String query = "select " +
+                    "case when m.age <= 10 then '학생요금' " +
+                    "     when m.age >= 60 then '경로요금' " +
+                    "     else '일반요금' " +
+                    "end " +
+                    "from Member m";
+*/
+/*COALESCE
+            String query = "select coalesce(m.username, '이름 없는 회원') from Member m";
+*/
+            //nullif : username이 관리자면 null을 반환. 나머지는 username 반환.
+            String query = "select nullif(m.username, '관리자') as username " +
+                    "From Member m ";
+
+            List<String> result = em.createQuery(query, String.class)
+                    .getResultList();
+            for (String s : result) {
+                System.out.println("s = " + s);
             }
 
 
