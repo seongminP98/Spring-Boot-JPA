@@ -55,9 +55,6 @@ public class JpaMain {
 
             em.flush();
             em.clear();
-
-
-
 /*엔티티 프로젝션
             List<Member> result = em.createQuery("select m from Member m", Member.class)
                     .getResultList();
@@ -76,7 +73,6 @@ public class JpaMain {
             em.createQuery("select o.address from Order o", Address.class)
                     .getResultList();
 */
-
 /*프로젝션 여러 값 조회. Object[] 타입으로 조회. 별로 안좋음.
             List<Object[]> resultList = em.createQuery("select m.username, m.age from Member m")
                     .getResultList();
@@ -96,7 +92,6 @@ public class JpaMain {
             String query = "select m from Member m left join m.team t on t.name = 'teamA'";
             String query2 = "select m from Member m left join Team t on m.username = t.name";
 */
-
 /*select에 서브쿼리 사용
             String query = "select (select avg(m1.age) From Member m1) as avgAge from Member m left join Team t on m.username = t.name";
 */
@@ -125,13 +120,15 @@ public class JpaMain {
 /*COALESCE
             String query = "select coalesce(m.username, '이름 없는 회원') from Member m";
 */
-            //nullif : username이 관리자면 null을 반환. 나머지는 username 반환.
+/*nullif : username이 관리자면 null을 반환. 나머지는 username 반환.
             String query = "select nullif(m.username, '관리자') as username " +
                     "From Member m ";
+*/
+            String query = "select locate('de', 'abcdefg') From Member m";
 
-            List<String> result = em.createQuery(query, String.class)
+            List<Integer> result = em.createQuery(query, Integer.class)
                     .getResultList();
-            for (String s : result) {
+            for (Integer s : result) {
                 System.out.println("s = " + s);
             }
 
