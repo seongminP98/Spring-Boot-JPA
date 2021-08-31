@@ -15,10 +15,13 @@ public class JpaMain {
 
         try{
 
-            Member member = new Member();
-            member.setUsername("member1");
-            member.setAge(10);
-            em.persist(member);
+            for(int i=0; i<100; i++) {
+                Member member = new Member();
+                member.setUsername("member" + i);
+                member.setAge(i);
+                em.persist(member);
+            }
+
 
 /*type query, query / 결과 조회
             TypedQuery<Member> query1 = em.createQuery("select m from Member m", Member.class);
@@ -42,6 +45,8 @@ public class JpaMain {
                     .getSingleResult();
             System.out.println("singleResult = " + result.getUsername());
 */
+
+
             em.flush();
             em.clear();
 
@@ -79,6 +84,17 @@ public class JpaMain {
             System.out.println("memberDTO = " + memberDTO.getUsername());
             System.out.println("memberDTO = " + memberDTO.getAge());
 */
+
+            List<Member> result = em.createQuery("select m from Member m order by m.age desc", Member.class)
+                    .setFirstResult(1)
+                    .setMaxResults(10)
+                    .getResultList();
+
+            System.out.println("result.size = " + result.size());
+            for (Member member1 : result) {
+                System.out.println("member1 = " + member1);
+            }
+
 
             tx.commit();
         } catch (Exception e) {
