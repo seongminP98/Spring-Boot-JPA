@@ -91,10 +91,13 @@ public class JpaMain {
             System.out.println("memberDTO = " + memberDTO.getUsername());
             System.out.println("memberDTO = " + memberDTO.getAge());
 */
+/*조인
             String query = "select m from Member m left join m.team t on t.name = 'teamA'";
             String query2 = "select m from Member m left join Team t on m.username = t.name";
+*/
 
-            List<Member> result = em.createQuery(query2, Member.class)
+            String query = "select (select avg(m1.age) From Member m1) as avgAge from Member m left join Team t on m.username = t.name";
+            List<Member> result = em.createQuery(query, Member.class)
                     .getResultList();
 
             System.out.println("result.size = " + result.size());
