@@ -15,12 +15,17 @@ public class JpaMain {
 
         try{
 
-            for(int i=0; i<100; i++) {
-                Member member = new Member();
-                member.setUsername("member" + i);
-                member.setAge(i);
-                em.persist(member);
-            }
+            Team team = new Team();
+            team.setName("teamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("teamA");
+            member.setAge(10);
+
+            member.setTeam(team);
+
+            em.persist(member);
 
 
 /*type query, query / 결과 조회
@@ -49,6 +54,8 @@ public class JpaMain {
 
             em.flush();
             em.clear();
+
+
 
 /*엔티티 프로젝션
             List<Member> result = em.createQuery("select m from Member m", Member.class)
@@ -84,10 +91,10 @@ public class JpaMain {
             System.out.println("memberDTO = " + memberDTO.getUsername());
             System.out.println("memberDTO = " + memberDTO.getAge());
 */
+            String query = "select m from Member m left join m.team t on t.name = 'teamA'";
+            String query2 = "select m from Member m left join Team t on m.username = t.name";
 
-            List<Member> result = em.createQuery("select m from Member m order by m.age desc", Member.class)
-                    .setFirstResult(1)
-                    .setMaxResults(10)
+            List<Member> result = em.createQuery(query2, Member.class)
                     .getResultList();
 
             System.out.println("result.size = " + result.size());
