@@ -92,7 +92,7 @@ public class JpaMain {
                 }
             }
 */
-            /*일반 조인.
+/*일반 조인.
             String query = "select t From Team t join t.members m";
 
             List<Team> result = em.createQuery(query, Team.class)
@@ -106,6 +106,7 @@ public class JpaMain {
                 }
             }
 */
+/*페치조인 한계. batchsize 사용
             String query = "select t From Team t";
 
             List<Team> result = em.createQuery(query, Team.class)
@@ -119,7 +120,26 @@ public class JpaMain {
                     System.out.println("-> member = " + member);
                 }
             }
+*/
+/*엔티티 직접 사용 - 기본 키 값
+            String query = "select m from Member m where m = :member";
 
+            Member findMember = em.createQuery(query, Member.class)
+                    .setParameter("member", member1)
+                    .getSingleResult();
+
+            System.out.println("findMember = " + findMember);
+*/
+//엔티티 직접 사용 - 외래 키 값
+            String query = "select m from Member m where m.team = :team";
+
+            List<Member> members = em.createQuery(query, Member.class)
+                    .setParameter("team", teamA)
+                    .getResultList();
+
+            for (Member member : members) {
+                System.out.println("member = " + member);
+            }
 
             tx.commit();
         } catch (Exception e) {
