@@ -92,7 +92,7 @@ public class JpaMain {
                 }
             }
 */
-/*일반 조인. 
+            /*일반 조인.
             String query = "select t From Team t join t.members m";
 
             List<Team> result = em.createQuery(query, Team.class)
@@ -106,6 +106,19 @@ public class JpaMain {
                 }
             }
 */
+            String query = "select t From Team t";
+
+            List<Team> result = em.createQuery(query, Team.class)
+                    .setFirstResult(0)
+                    .setMaxResults(2)
+                    .getResultList();
+
+            for (Team team : result) {
+                System.out.println("team = " + team.getName() + "|members=" + team.getMembers().size());
+                for(Member member : team.getMembers()) {
+                    System.out.println("-> member = " + member);
+                }
+            }
 
 
             tx.commit();
