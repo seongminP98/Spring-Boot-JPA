@@ -1,6 +1,7 @@
 package jpql;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -14,124 +15,164 @@ public class JpaMain {
         tx.begin();
 
         try{
+            Team teamA = new Team();
+            teamA.setName("팀A");
+            em.persist(teamA);
 
-            Team team = new Team();
-            team.setName("teamA");
-            em.persist(team);
+            Team teamB = new Team();
+            teamB.setName("팀B");
+            em.persist(teamB);
 
-            Member member = new Member();
-            member.setUsername("관리자");
-            member.setAge(10);
-            member.setType(MemberType.ADMIN);
+            Member member1 = new Member();
+            member1.setUsername("회원1");
+            member1.setAge(0);
+            member1.setTeam(teamA);
+            em.persist(member1);
 
-            member.setTeam(team);
+            Member member2 = new Member();
+            member2.setUsername("회원2");
+            member2.setAge(0);
+            member2.setTeam(teamA);
+            em.persist(member2);
 
-            em.persist(member);
+            Member member3 = new Member();
+            member3.setUsername("회원3");
+            member3.setAge(0);
+            member3.setTeam(teamB);
+            em.persist(member3);
 
+//            em.flush();
+//            em.clear();
 
-/*type query, query / 결과 조회
-            TypedQuery<Member> query1 = em.createQuery("select m from Member m", Member.class);
-            TypedQuery<String> query2 = em.createQuery("select m.username from Member m", String.class);
-            Query query3 = em.createQuery("select m.username, m.age from Member m"); //반환 타입이 명확하지 않을 경우
-
-            List<Member> resultList = query1.getResultList(); //결과가 하나 이상일 때 리스트 반환
-            //결과가 없으면 빈 리스트 반환
-            for (Member member1 : resultList) {
-                System.out.println("member1 = " + member1);
-            }
-
-            Member singleResult = query1.getSingleResult(); //결과가 하나 일 때
-            //결과가 정확히 하나, 단일 객체 반환
-            //없거나 여러개면? Exception터짐
-            System.out.println("singleResult = " + singleResult);
-*/
-/*이름 기준 파라미터 바인딩. 위치기반은 사용하지 말기
-            Member result = em.createQuery("select m from Member m where m.username = :username", Member.class)
-                    .setParameter("username", "member1")
+/*경로 표현식
+            //String query = "select m.team From Member m"; //단일 값 연관 경로
+            String query = "select m.username From Team t join t.members m"; //컬렉션 값 연관 경로 / 명식적 조인 사용
+            Integer result = em.createQuery(query, Integer.class)
                     .getSingleResult();
-            System.out.println("singleResult = " + result.getUsername());
+            System.out.println("result = " + result);
 */
+/*페치 조인 사용x , 지연 로딩
+            String query = "select m From Member m";
 
+            List<Member> result = em.createQuery(query, Member.class)
+                    .getResultList();
 
-            em.flush();
+            for (Member member : result) {
+                System.out.println("member = " + member.getUsername() + ", " + member.getTeam().getName());
+                //지연로딩이기 때문에 첫번째 루프를 돌 때 팀A를 가져옴.
+                //회원1, 팀A(SQL)
+                //회원2, 팀A(1차캐시)
+                //회원3, 팀B(SQL)
+
+                //회원 100명 -> N + 1 문제  => 페치 조인으로 해결
+            }
+*/
+/*페치 조인
+            String query = "select m From Member m join fetch m.team";
+
+            List<Member> result = em.createQuery(query, Member.class)
+                    .getResultList();
+
+            for (Member member : result) {
+                System.out.println("member = " + member.getUsername() + ", " + member.getTeam().getName());
+                //이미 조인으로 다 들고와서 여기서의 team은 프록시가 아님. 실제 엔티티가 담긴다.
+                //지연 로딩해도 페치 조인이 우선임.
+            }
+*/
+/*페치조인과 distinct
+            String query = "select distinct t From Team t join fetch t.members";
+
+            List<Team> result = em.createQuery(query, Team.class)
+                    .getResultList();
+
+            for (Team team : result) {
+                System.out.println("team = " + team.getName() + "|members=" + team.getMembers().size());
+                for(Member member : team.getMembers()) {
+                    System.out.println("-> member = " + member);
+                    //distinct 사용하기 전 : 팀A가 중복해서 2줄 나옴.
+                }
+            }
+*/
+/*일반 조인.
+            String query = "select t From Team t join t.members m";
+
+            List<Team> result = em.createQuery(query, Team.class)
+                    .getResultList();
+
+            for (Team team : result) {
+                System.out.println("team = " + team.getName() + "|members=" + team.getMembers().size());
+                for(Member member : team.getMembers()) {
+                    System.out.println("-> member = " + member);
+                    //distinct 사용하기 전 : 팀A가 중복해서 2줄 나옴.
+                }
+            }
+*/
+/*페치조인 한계. batchsize 사용
+            String query = "select t From Team t";
+
+            List<Team> result = em.createQuery(query, Team.class)
+                    .setFirstResult(0)
+                    .setMaxResults(2)
+                    .getResultList();
+
+            for (Team team : result) {
+                System.out.println("team = " + team.getName() + "|members=" + team.getMembers().size());
+                for(Member member : team.getMembers()) {
+                    System.out.println("-> member = " + member);
+                }
+            }
+*/
+/*엔티티 직접 사용 - 기본 키 값
+            String query = "select m from Member m where m = :member";
+
+            Member findMember = em.createQuery(query, Member.class)
+                    .setParameter("member", member1)
+                    .getSingleResult();
+
+            System.out.println("findMember = " + findMember);
+*/
+/*엔티티 직접 사용 - 외래 키 값
+            String query = "select m from Member m where m.team = :team";
+
+            List<Member> members = em.createQuery(query, Member.class)
+                    .setParameter("team", teamA)
+                    .getResultList();
+
+            for (Member member : members) {
+                System.out.println("member = " + member);
+            }
+*/
+/*Named 쿼리
+            List<Member> resultList = em.createNamedQuery("Member.findByUsername", Member.class)
+                    .setParameter("username", "회원1")
+                    .getResultList();
+
+            for (Member member : resultList) {
+                System.out.println("member = " + member);
+            }
+*/
+            //벌크 연산
+            //FLUSH 자동 호출 : commit, query, 강제로 flush 호출. //여기서 flush가 됨.
+            int resultCount = em.createQuery("update Member m set m.age = 20")
+                    .executeUpdate();
+            System.out.println("resultCount = " + resultCount);
+
+            //age가 0으로 나옴. 영속성 컨텍스트에는 0으로 되어있기 때문.
+            System.out.println("member1.getAge() = " + member1.getAge());
+            System.out.println("member2.getAge() = " + member2.getAge());
+            System.out.println("member3.getAge() = " + member2.getAge());
+
+            //여기서도 age는 0이 됨. DB에만 update가 반영되었기 때문. 이건 영속성 컨텍스트에서 가져옴.
+            Member findMember = em.find(Member.class, member1.getId());
+            System.out.println("findMember.getAge() = " + findMember.getAge());
+
+            //그래서 em.clear()를 해야함.
             em.clear();
-/*엔티티 프로젝션
-            List<Member> result = em.createQuery("select m from Member m", Member.class)
-                    .getResultList();
-            //영속성 컨텍스트에서 관리됨.
-            Member findMember = result.get(0);
-            findMember.setAge(20);
+            Member findMember2 = em.find(Member.class, member1.getId());
+            System.out.println("findMember.getAge() = " + findMember2.getAge());
+            //여기선 age가 20으로 나옴.
 
-
-
-            List<Team> result1 = em.createQuery("select m.team from Member m", Team.class)
-                    .getResultList();
-            List<Team> result2 = em.createQuery("select t from Member m join Team m.team t", Team.class)
-                    .getResultList(); //이렇게 조인을 넣어서 사용하는게 좋음. join이 보이는게 좋음.
-*/
-/*임베디드 타입 프로젝션
-            em.createQuery("select o.address from Order o", Address.class)
-                    .getResultList();
-*/
-/*프로젝션 여러 값 조회. Object[] 타입으로 조회. 별로 안좋음.
-            List<Object[]> resultList = em.createQuery("select m.username, m.age from Member m")
-                    .getResultList();
-
-            Object[] result = resultList.get(0);
-            System.out.println("username = " + result[0]);
-            System.out.println("age = " + result[1]);
-*/
-/*new 명령어로 조회. 단순 값을 DTO로 바로 조회. 패키지 명을 포함한 전체 클래스 명 입력. 순서와 타입이 일치하는 생성자 필요.
-            List<MemberDTO> result = em.createQuery("select new jpql.MemberDTO(m.username, m.age) from Member m", MemberDTO.class)
-                    .getResultList();
-            MemberDTO memberDTO = result.get(0);
-            System.out.println("memberDTO = " + memberDTO.getUsername());
-            System.out.println("memberDTO = " + memberDTO.getAge());
-*/
-/*조인
-            String query = "select m from Member m left join m.team t on t.name = 'teamA'";
-            String query2 = "select m from Member m left join Team t on m.username = t.name";
-*/
-/*select에 서브쿼리 사용
-            String query = "select (select avg(m1.age) From Member m1) as avgAge from Member m left join Team t on m.username = t.name";
-*/
-/*JPQL 타입 표현과 기타식
-            String query = "select m.username, 'HELLO', TRUE From Member m" +
-                    "where m.type = :userType";
-
-            List<Object[]> result = em.createQuery(query)
-                    .setParameter("userType", MemberType.ADMIN)
-                    .getResultList();
-
-            for (Object[] objects : result) {
-                System.out.println("objects = " + objects[0]);
-                System.out.println("objects = " + objects[1]);
-                System.out.println("objects = " + objects[2]);
-            }
-*/
-/*조건식 - case식            //문자열 더하기 할 때 띄어쓰기 조심!
-            String query = "select " +
-                    "case when m.age <= 10 then '학생요금' " +
-                    "     when m.age >= 60 then '경로요금' " +
-                    "     else '일반요금' " +
-                    "end " +
-                    "from Member m";
-*/
-/*COALESCE
-            String query = "select coalesce(m.username, '이름 없는 회원') from Member m";
-*/
-/*nullif : username이 관리자면 null을 반환. 나머지는 username 반환.
-            String query = "select nullif(m.username, '관리자') as username " +
-                    "From Member m ";
-*/
-            String query = "select locate('de', 'abcdefg') From Member m";
-
-            List<Integer> result = em.createQuery(query, Integer.class)
-                    .getResultList();
-            for (Integer s : result) {
-                System.out.println("s = " + s);
-            }
-
+            //벌크 연산 수행 후 영속성 컨텍스트 초기화!
 
             tx.commit();
         } catch (Exception e) {
