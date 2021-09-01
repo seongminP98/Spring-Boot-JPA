@@ -25,23 +25,24 @@ public class JpaMain {
 
             Member member1 = new Member();
             member1.setUsername("회원1");
+            member1.setAge(0);
             member1.setTeam(teamA);
             em.persist(member1);
 
             Member member2 = new Member();
             member2.setUsername("회원2");
+            member2.setAge(0);
             member2.setTeam(teamA);
             em.persist(member2);
 
             Member member3 = new Member();
             member3.setUsername("회원3");
+            member3.setAge(0);
             member3.setTeam(teamB);
             em.persist(member3);
 
-
-
-            em.flush();
-            em.clear();
+//            em.flush();
+//            em.clear();
 
 /*경로 표현식
             //String query = "select m.team From Member m"; //단일 값 연관 경로
@@ -141,6 +142,7 @@ public class JpaMain {
                 System.out.println("member = " + member);
             }
 */
+/*Named 쿼리
             List<Member> resultList = em.createNamedQuery("Member.findByUsername", Member.class)
                     .setParameter("username", "회원1")
                     .getResultList();
@@ -148,6 +150,29 @@ public class JpaMain {
             for (Member member : resultList) {
                 System.out.println("member = " + member);
             }
+*/
+            //벌크 연산
+            //FLUSH 자동 호출 : commit, query, 강제로 flush 호출. //여기서 flush가 됨.
+            int resultCount = em.createQuery("update Member m set m.age = 20")
+                    .executeUpdate();
+            System.out.println("resultCount = " + resultCount);
+
+            //age가 0으로 나옴. 영속성 컨텍스트에는 0으로 되어있기 때문.
+            System.out.println("member1.getAge() = " + member1.getAge());
+            System.out.println("member2.getAge() = " + member2.getAge());
+            System.out.println("member3.getAge() = " + member2.getAge());
+
+            //여기서도 age는 0이 됨. DB에만 update가 반영되었기 때문. 이건 영속성 컨텍스트에서 가져옴.
+            Member findMember = em.find(Member.class, member1.getId());
+            System.out.println("findMember.getAge() = " + findMember.getAge());
+
+            //그래서 em.clear()를 해야함.
+            em.clear();
+            Member findMember2 = em.find(Member.class, member1.getId());
+            System.out.println("findMember.getAge() = " + findMember2.getAge());
+            //여기선 age가 20으로 나옴.
+
+            //벌크 연산 수행 후 영속성 컨텍스트 초기화!
 
             tx.commit();
         } catch (Exception e) {
