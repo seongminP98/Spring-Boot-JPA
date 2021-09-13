@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,11 +22,83 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84e512b9-5acf-4ae7-8359-245556c9e0c1" name="Default Changelist" comment="" />
+    <list default="true" id="fdcc56e5-edaa-4b07-9155-c99daf350775" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpashopAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpashopAPI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/JpashopapiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Delivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/DeliveryStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/item/Album.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/item/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/item/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/item/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/exception/NotEnoughStockException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/repository/ItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/repository/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/repository/OrderSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/service/ItemService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/resources/templates/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/test/java/jpabookapi/jpashopapi/JpashopapiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/test/java/jpabookapi/jpashopapi/service/MemberServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/test/java/jpabookapi/jpashopapi/service/OrderServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashopapi/src/test/resources/application.yml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -35,27 +110,147 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1xrMSWcrOEVVjPYkNJVq5zOZ6ut" />
+  <component name="ProjectId" id="1xrN2gvcHk0QUsANk37uWHlQASO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jpashopapi/build.gradle" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="jpabookapi.jpashopapi.service" />
+      <recent name="jpabookapi.jpashopapi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\springProject\Spring-Boot-JPA\jpashopapi\src\main\resources\templates" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="jpabookapi.jpashopapi.domain" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\springProject\Spring-Boot-JPA\jpashopapi\src\main\resources\static" />
+      <recent name="D:\springProject\Spring-Boot-JPA\jpashopapi\jpashopapi\src\test\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.JpashopapiApplication">
+    <configuration name="JpashopapiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jpabookapi.jpashopapi.JpashopapiApplication" />
+      <module name="jpashopapi.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jpabookapi.jpashopapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;jpabookapi.jpashopapi.service.MemberServiceTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="OrderServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;jpabookapi.jpashopapi.service.OrderServiceTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="OrderServiceTest.상품주문" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;jpabookapi.jpashopapi.service.OrderServiceTest.상품주문&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jpashopapi.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jpabookapi.jpashopapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="jpabookapi.jpashopapi.service" />
+      <option name="MAIN_CLASS_NAME" value="jpabookapi.jpashopapi.service.OrderServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JpashopapiApplication" />
+        <item itemvalue="JUnit.OrderServiceTest" />
+        <item itemvalue="Gradle.OrderServiceTest.상품주문" />
+        <item itemvalue="Gradle.OrderServiceTest" />
+        <item itemvalue="Gradle.MemberServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="84e512b9-5acf-4ae7-8359-245556c9e0c1" name="Default Changelist" comment="" />
-      <created>1631108758302</created>
+      <changelist id="fdcc56e5-edaa-4b07-9155-c99daf350775" name="Default Changelist" comment="" />
+      <created>1631109041916</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1631108758302</updated>
+      <updated>1631109041916</updated>
     </task>
     <servers />
   </component>
@@ -69,15 +264,56 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="261" key="FileChooserDialogImpl" timestamp="1631109036658">
+    <state x="58" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1631267572953">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="446" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631109036658" />
-    <state x="167" y="151" key="SettingsEditor" timestamp="1631108966085">
+    <state x="58" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631267572953" />
+    <state x="339" y="211" key="#com.intellij.ide.util.MemberChooser" timestamp="1631517987928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="167" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1631108966085" />
+    <state x="339" y="211" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1631517987928" />
+    <state x="244" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1631175870561">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="244" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631175870561" />
+    <state x="391" y="263" key="FileChooserDialogImpl" timestamp="1631510127653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="391" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631510127653" />
+    <state width="1721" height="173" key="GridCell.Tab.0.bottom" timestamp="1631541442972">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1721" height="173" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631541442972" />
+    <state width="1721" height="173" key="GridCell.Tab.0.center" timestamp="1631541442971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1721" height="173" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631541442971" />
+    <state width="1721" height="173" key="GridCell.Tab.0.left" timestamp="1631541442971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1721" height="173" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631541442971" />
+    <state width="1721" height="173" key="GridCell.Tab.0.right" timestamp="1631541442972">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1721" height="173" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631541442972" />
+    <state x="105" y="153" key="SettingsEditor" timestamp="1631509870432">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="105" y="153" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1631509870432" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1631541580723">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631541580723" />
+    <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631266283902">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631266283902" />
+    <state x="278" y="231" key="run.anything.popup" timestamp="1631519425830">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="278" y="231" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1631519425830" />
   </component>
 </project>
