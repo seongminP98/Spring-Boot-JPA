@@ -23,47 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdcc56e5-edaa-4b07-9155-c99daf350775" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpashopAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpashopAPI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/JpashopapiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Delivery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/DeliveryStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/OrderItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/OrderStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/item/Album.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/item/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/item/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/domain/item/Movie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/exception/NotEnoughStockException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/repository/ItemRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/repository/MemberRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/repository/OrderRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/repository/OrderSearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/service/ItemService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/service/MemberService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/java/jpabookapi/jpashopapi/service/OrderService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/main/resources/templates/hello.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/test/java/jpabookapi/jpashopapi/JpashopapiApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/test/java/jpabookapi/jpashopapi/service/MemberServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/test/java/jpabookapi/jpashopapi/service/OrderServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashopapi/src/test/resources/application.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,30 +243,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631510127653" />
-    <state width="1721" height="173" key="GridCell.Tab.0.bottom" timestamp="1631541442972">
+    <state width="1880" height="313" key="GridCell.Tab.0.bottom" timestamp="1631542293341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1721" height="173" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631541442972" />
-    <state width="1721" height="173" key="GridCell.Tab.0.center" timestamp="1631541442971">
+    <state width="1880" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631542293341" />
+    <state width="1880" height="313" key="GridCell.Tab.0.center" timestamp="1631542293341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1721" height="173" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631541442971" />
-    <state width="1721" height="173" key="GridCell.Tab.0.left" timestamp="1631541442971">
+    <state width="1880" height="313" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631542293341" />
+    <state width="1880" height="313" key="GridCell.Tab.0.left" timestamp="1631542293341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1721" height="173" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631541442971" />
-    <state width="1721" height="173" key="GridCell.Tab.0.right" timestamp="1631541442972">
+    <state width="1880" height="313" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631542293341" />
+    <state width="1880" height="313" key="GridCell.Tab.0.right" timestamp="1631542293341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1721" height="173" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631541442972" />
+    <state width="1880" height="313" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631542293341" />
     <state x="105" y="153" key="SettingsEditor" timestamp="1631509870432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="105" y="153" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1631509870432" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1631541580723">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1631542206927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631541580723" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631542206927" />
     <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631266283902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
