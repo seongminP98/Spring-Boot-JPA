@@ -1,5 +1,6 @@
 package jpabookapi.jpashopapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,6 +23,7 @@ public class Member {
     @Embedded //(Embedded, Embeddable 하나만 있어도 됨. 여기선 둘 다 써줬음.)
     private Address address;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "member") //Order 의 member 필드
     private List<Order> orders = new ArrayList<>(); //컬렉션은 필드에서 초기화!
 
