@@ -24,7 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fdcc56e5-edaa-4b07-9155-c99daf350775" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/api/MemberApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/api/MemberApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +81,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -245,34 +245,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631510127653" />
-    <state width="1224" height="235" key="GridCell.Tab.0.bottom" timestamp="1631620000574">
+    <state width="1224" height="235" key="GridCell.Tab.0.bottom" timestamp="1631687943400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1224" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631620000574" />
-    <state width="1224" height="235" key="GridCell.Tab.0.center" timestamp="1631620000574">
+    <state width="1224" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631687943400" />
+    <state width="1224" height="235" key="GridCell.Tab.0.center" timestamp="1631687943400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1224" height="235" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631620000574" />
-    <state width="1224" height="235" key="GridCell.Tab.0.left" timestamp="1631620000574">
+    <state width="1224" height="235" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631687943400" />
+    <state width="1224" height="235" key="GridCell.Tab.0.left" timestamp="1631687943400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1224" height="235" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631620000574" />
-    <state width="1224" height="235" key="GridCell.Tab.0.right" timestamp="1631620000574">
+    <state width="1224" height="235" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631687943400" />
+    <state width="1224" height="235" key="GridCell.Tab.0.right" timestamp="1631687943400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1224" height="235" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631620000574" />
+    <state width="1224" height="235" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631687943400" />
+    <state x="167" y="427" key="ReplaceDuplicatesPrompt" timestamp="1631687861877">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="167" y="427" key="ReplaceDuplicatesPrompt/0.0.1920.1040@0.0.1920.1040" timestamp="1631687861877" />
     <state x="105" y="153" key="SettingsEditor" timestamp="1631509870432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="105" y="153" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1631509870432" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1631619258226">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1631687137053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631619258226" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631687137053" />
     <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631266283902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631266283902" />
+    <state x="82" y="253" key="extract.method.dialog" timestamp="1631687859914">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="82" y="253" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631687859914" />
     <state x="278" y="231" key="run.anything.popup" timestamp="1631519425830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
