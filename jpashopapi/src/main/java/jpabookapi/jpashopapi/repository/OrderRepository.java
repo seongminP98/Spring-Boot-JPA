@@ -94,4 +94,15 @@ public class OrderRepository {
         return query.getResultList();
     }
 
+    public List<Order> findAllWithMemberDelivery() {
+        /**
+         * LAZY 무시하고 프록시 객체도 아니고 실제 값을 채워서 가져옴.
+         */
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+
+    }
 }
