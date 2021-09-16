@@ -25,6 +25,7 @@
     <list default="true" id="fdcc56e5-edaa-4b07-9155-c99daf350775" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/api/OrderApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/api/OrderApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/order/query/OrderQueryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/order/query/OrderQueryDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/order/query/OrderQueryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/order/query/OrderQueryRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,10 +235,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="58" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631267572953" />
-    <state x="339" y="211" key="#com.intellij.ide.util.MemberChooser" timestamp="1631782949052">
+    <state x="339" y="211" key="#com.intellij.ide.util.MemberChooser" timestamp="1631801555713">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="339" y="211" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1631782949052" />
+    <state x="339" y="211" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1631801555713" />
     <state x="244" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1631175870561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -246,22 +247,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631510127653" />
-    <state width="1192" height="165" key="GridCell.Tab.0.bottom" timestamp="1631800122133">
+    <state width="1192" height="211" key="GridCell.Tab.0.bottom" timestamp="1631802049016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1192" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631800122133" />
-    <state width="1192" height="165" key="GridCell.Tab.0.center" timestamp="1631800122133">
+    <state width="1192" height="211" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631802049016" />
+    <state width="1192" height="211" key="GridCell.Tab.0.center" timestamp="1631802049016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1192" height="165" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631800122133" />
-    <state width="1192" height="165" key="GridCell.Tab.0.left" timestamp="1631800122133">
+    <state width="1192" height="211" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631802049016" />
+    <state width="1192" height="211" key="GridCell.Tab.0.left" timestamp="1631802049016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1192" height="165" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631800122133" />
-    <state width="1192" height="165" key="GridCell.Tab.0.right" timestamp="1631800122133">
+    <state width="1192" height="211" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631802049016" />
+    <state width="1192" height="211" key="GridCell.Tab.0.right" timestamp="1631802049016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1192" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631800122133" />
+    <state width="1192" height="211" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631802049016" />
     <state x="167" y="427" key="ReplaceDuplicatesPrompt" timestamp="1631687861877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -270,18 +271,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="105" y="153" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1631509870432" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1631799721847">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1631801560988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631799721847" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631801560988" />
     <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631266283902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631266283902" />
-    <state x="82" y="253" key="extract.method.dialog" timestamp="1631782553197">
+    <state x="82" y="253" key="extract.method.dialog" timestamp="1631800249734">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="82" y="253" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631782553197" />
+    <state x="82" y="253" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631800249734" />
     <state x="278" y="231" key="run.anything.popup" timestamp="1631519425830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
