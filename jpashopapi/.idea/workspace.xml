@@ -22,12 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdcc56e5-edaa-4b07-9155-c99daf350775" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/service/OrderService.java" afterDir="false" />
-    </list>
+    <list default="true" id="fdcc56e5-edaa-4b07-9155-c99daf350775" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +102,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../data-jpa/build.gradle" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -270,26 +265,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="244" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631175870561" />
-    <state x="391" y="263" key="FileChooserDialogImpl" timestamp="1631510127653">
+    <state x="391" y="263" key="FileChooserDialogImpl" timestamp="1631865539657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="391" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631510127653" />
-    <state width="1507" height="225" key="GridCell.Tab.0.bottom" timestamp="1631864428478">
+    <state x="391" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631865539657" />
+    <state width="1507" height="225" key="GridCell.Tab.0.bottom" timestamp="1631865543424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1507" height="225" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631864428478" />
-    <state width="1507" height="225" key="GridCell.Tab.0.center" timestamp="1631864428478">
+    <state width="1507" height="225" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631865543424" />
+    <state width="1507" height="225" key="GridCell.Tab.0.center" timestamp="1631865543424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1507" height="225" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631864428478" />
-    <state width="1507" height="225" key="GridCell.Tab.0.left" timestamp="1631864428478">
+    <state width="1507" height="225" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631865543424" />
+    <state width="1507" height="225" key="GridCell.Tab.0.left" timestamp="1631865543424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1507" height="225" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631864428478" />
-    <state width="1507" height="225" key="GridCell.Tab.0.right" timestamp="1631864428478">
+    <state width="1507" height="225" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631865543424" />
+    <state width="1507" height="225" key="GridCell.Tab.0.right" timestamp="1631865543424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1507" height="225" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631864428478" />
+    <state width="1507" height="225" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631865543424" />
     <state x="167" y="427" key="ReplaceDuplicatesPrompt" timestamp="1631687861877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
