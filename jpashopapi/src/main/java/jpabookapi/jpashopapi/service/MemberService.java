@@ -2,8 +2,8 @@ package jpabookapi.jpashopapi.service;
 
 import jpabookapi.jpashopapi.domain.Member;
 import jpabookapi.jpashopapi.repository.MemberRepository;
+import jpabookapi.jpashopapi.repository.MemberRepositoryOld;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,12 +39,12 @@ public class MemberService {
 
     //id로 조회
     public Member findOne(Long memberId) {
-        return memberRepository.findOne(memberId);
+        return memberRepository.findById(memberId).get();
     }
 
     @Transactional
     public void update(Long id, String name) {
-        Member member = memberRepository.findOne(id);
+        Member member = memberRepository.findById(id).get();
         member.setName(name); //변경감지
     }
 }

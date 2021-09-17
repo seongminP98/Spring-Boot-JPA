@@ -2,10 +2,7 @@ package jpabookapi.jpashopapi.service;
 
 import jpabookapi.jpashopapi.domain.*;
 import jpabookapi.jpashopapi.domain.item.Item;
-import jpabookapi.jpashopapi.repository.ItemRepository;
-import jpabookapi.jpashopapi.repository.MemberRepository;
-import jpabookapi.jpashopapi.repository.OrderRepository;
-import jpabookapi.jpashopapi.repository.OrderSearch;
+import jpabookapi.jpashopapi.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +23,7 @@ public class OrderService {
      */
     @Transactional
     public Long order(Long memberId, Long itemId, int count) {
-        Member member = memberRepository.findOne(memberId);
+        Member member = memberRepository.findById(memberId).get();
         Item item = itemRepository.findOne(itemId);
 
         //배송정보 생성
