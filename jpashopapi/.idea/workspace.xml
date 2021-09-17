@@ -24,11 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fdcc56e5-edaa-4b07-9155-c99daf350775" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/MemberRepositoryOld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/OrderSimpleQueryDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/repository/OrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabookapi/jpashopapi/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/jpabookapi/jpashopapi/service/MemberServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jpabookapi/jpashopapi/service/MemberServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,29 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jpashopapi" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jpashopapi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jpashopapi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jpashopapi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -88,11 +108,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
@@ -128,44 +148,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;jpabookapi.jpashopapi.service.MemberServiceTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="OrderServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;jpabookapi.jpashopapi.service.OrderServiceTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="OrderServiceTest.상품주문" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -183,6 +165,44 @@
         <option name="vmOptions" />
       </ExternalSystemSettings>
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="jpashopapi [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="jpashopapi [compileQuerydsl]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileQuerydsl" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -203,10 +223,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.JpashopapiApplication" />
+        <item itemvalue="Gradle.jpashopapi [compileQuerydsl]" />
+        <item itemvalue="Gradle.jpashopapi [clean]" />
         <item itemvalue="JUnit.OrderServiceTest" />
         <item itemvalue="Gradle.OrderServiceTest.상품주문" />
-        <item itemvalue="Gradle.OrderServiceTest" />
-        <item itemvalue="Gradle.MemberServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -254,42 +274,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631510127653" />
-    <state width="1137" height="225" key="GridCell.Tab.0.bottom" timestamp="1631860284168">
+    <state width="1507" height="225" key="GridCell.Tab.0.bottom" timestamp="1631864428478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1137" height="225" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631860284168" />
-    <state width="1137" height="225" key="GridCell.Tab.0.center" timestamp="1631860284168">
+    <state width="1507" height="225" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631864428478" />
+    <state width="1507" height="225" key="GridCell.Tab.0.center" timestamp="1631864428478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1137" height="225" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631860284168" />
-    <state width="1137" height="225" key="GridCell.Tab.0.left" timestamp="1631860284168">
+    <state width="1507" height="225" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631864428478" />
+    <state width="1507" height="225" key="GridCell.Tab.0.left" timestamp="1631864428478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1137" height="225" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631860284168" />
-    <state width="1137" height="225" key="GridCell.Tab.0.right" timestamp="1631860284168">
+    <state width="1507" height="225" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631864428478" />
+    <state width="1507" height="225" key="GridCell.Tab.0.right" timestamp="1631864428478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1137" height="225" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631860284168" />
+    <state width="1507" height="225" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631864428478" />
     <state x="167" y="427" key="ReplaceDuplicatesPrompt" timestamp="1631687861877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="167" y="427" key="ReplaceDuplicatesPrompt/0.0.1920.1040@0.0.1920.1040" timestamp="1631687861877" />
-    <state x="105" y="153" key="SettingsEditor" timestamp="1631509870432">
+    <state x="105" y="153" key="SettingsEditor" timestamp="1631864230933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="105" y="153" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1631509870432" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1631802529531">
+    <state x="105" y="153" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1631864230933" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1631863347768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631802529531" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1631863347768" />
     <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631266283902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="146" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631266283902" />
-    <state x="82" y="253" key="extract.method.dialog" timestamp="1631800249734">
+    <state x="82" y="253" key="extract.method.dialog" timestamp="1631863744710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="82" y="253" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631800249734" />
+    <state x="82" y="253" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631863744710" />
     <state x="278" y="231" key="run.anything.popup" timestamp="1631519425830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
