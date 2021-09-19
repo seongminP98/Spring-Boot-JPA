@@ -152,4 +152,23 @@ class MemberRepositoryTest {
             System.out.println("member = " + member);
         }
     }
+
+    @Test
+    public void returnType() {
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("BBB", 20);
+        memberRepository.save(m1);
+        memberRepository.save(m2);
+
+        List<Member> result = memberRepository.findListByUsername("asdfasd");
+        System.out.println("result.size() = " + result.size()); //List는 없으면 empty 컬렉션 반환됨.
+
+        Member findMember = memberRepository.findMemberByUsername("asdfasdf");
+        System.out.println("findMember = " + findMember); //단건은 없으면 null 반환.
+
+        Optional<Member> findMember2 = memberRepository.findOptionalByUsername("sadf");
+        System.out.println("findMember2 = " + findMember2); //없을수도 있으면 Optional 사용하는게 좋음.
+        //단건 조회에서 결과가 2개 이상이면 예외가 터짐.
+
+    }
 }
