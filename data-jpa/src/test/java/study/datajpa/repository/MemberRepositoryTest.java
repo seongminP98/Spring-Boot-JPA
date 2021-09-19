@@ -3,6 +3,10 @@ package study.datajpa.repository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Slice;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 import study.datajpa.dto.MemberDto;
 import study.datajpa.entity.Member;
@@ -169,6 +173,39 @@ class MemberRepositoryTest {
         Optional<Member> findMember2 = memberRepository.findOptionalByUsername("sadf");
         System.out.println("findMember2 = " + findMember2); //없을수도 있으면 Optional 사용하는게 좋음.
         //단건 조회에서 결과가 2개 이상이면 예외가 터짐.
+
+    }
+
+    @Test
+    public void paging() {
+        //given
+        memberRepository.save(new Member("member1", 10));
+        memberRepository.save(new Member("member2", 10));
+        memberRepository.save(new Member("member3", 10));
+        memberRepository.save(new Member("member4", 10));
+        memberRepository.save(new Member("member5", 10));
+
+        int age = 10;
+        PageRequest pageRequest = PageRequest.of(0, 3, Sort.by(Sort.Direction.DESC, "username"));
+
+        //when
+        Page<Member> page = memberRepository.findByAge(age, pageRequest); //Slice로 하면 limit를 1개 늘려서 해줌. (더보기 방식)
+        //반환 타입을 Page로 받으면 totalCount 쿼리까지 같이 날린다.
+        //반환 타입 Page는 페이징 방식, Slice는 더보기 방식
+
+        //엔티티를 DTO로 변환하기
+        Page<MemberDto> toMap = page.map(m -> new MemberDto(m.getId(), m.getUsername(), null));
+
+
+        //then
+        List<Member> content = page.getContent();
+
+        assertThat(content.size()).isEqualTo(3);
+        assertThat(page.getTotalElements()).isEqualTo(5);
+        assertThat(page.getNumber()).isEqualTo(0); //페이지 번호
+        assertThat(page.getTotalPages()).isEqualTo(2); //페이지 총 번호
+        assertThat(page.isFirst()).isTrue(); //첫번째 페이지냐? true
+        assertThat(page.hasNext()).isTrue(); //다음페이지 있냐? true
 
     }
 }
