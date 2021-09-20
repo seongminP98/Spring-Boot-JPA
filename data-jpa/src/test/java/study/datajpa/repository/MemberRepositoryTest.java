@@ -12,6 +12,8 @@ import study.datajpa.dto.MemberDto;
 import study.datajpa.entity.Member;
 import study.datajpa.entity.Team;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,6 +28,8 @@ class MemberRepositoryTest {
 
     @Autowired MemberRepository memberRepository;
     @Autowired TeamRepository teamRepository;
+    @PersistenceContext
+    EntityManager em;
 
     @Test
     public void testMember() {
@@ -207,5 +211,33 @@ class MemberRepositoryTest {
         assertThat(page.isFirst()).isTrue(); //첫번째 페이지냐? true
         assertThat(page.hasNext()).isTrue(); //다음페이지 있냐? true
 
+    }
+
+    @Test
+    public void bulkUpdate() {
+        //given
+        memberRepository.save(new Member("member1", 10));
+        memberRepository.save(new Member("member2", 19));
+        memberRepository.save(new Member("member3", 20));
+        memberRepository.save(new Member("member4", 21));
+        memberRepository.save(new Member("member5", 40));
+
+        //when
+        int resultCount = memberRepository.bulkAgePlus(20);
+        em.flush();
+        em.clear();
+
+        /**
+         * em.flush() em.clear()를 하지 않으면 member5의 age는 40으로 나옴.
+         * 벌크연산에서 조심해야 할 것.
+         * em.flush()를 하고 em.clear()를 하면 db에 수정 쿼리가 날라갔기 떄문에 수정된게 반영됨.
+         * 벌크연산에 @Modifying(clearAutomatically = true)를 추가하면 em.flush() em.clear() 안해도 됨.
+         */
+        List<Member> result = memberRepository.findByUsername("member5");
+        Member member5 = result.get(0);
+        System.out.println("member5 = " + member5);
+
+        //then
+        assertThat(resultCount).isEqualTo(3);
     }
 }
