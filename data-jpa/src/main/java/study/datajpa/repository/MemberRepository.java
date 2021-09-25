@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom {
+public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom, JpaSpecificationExecutor<Member> { //Specification 사용x , 대신 Query DSL 사용하기.
 
 //    List<Member> findByUsername(String username); //구현하지 않아도 동작함. 쿼리메소드 기능
 
