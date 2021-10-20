@@ -18,6 +18,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 import study.querydsl.dto.MemberDto;
 import study.querydsl.dto.QMemberDto;
@@ -716,6 +717,52 @@ public class QuerydslBasicTest {
 
     private BooleanExpression allEq(String usernameCond, Integer ageCond) {
         return usernameEq(usernameCond).and(ageEq(ageCond));
+    }
+
+    @Test
+    public void bulkUpdate() {
+
+        //member1 = 10 -> DB 비회원
+        //member2 = 20 -> DB 비회원
+        //member3 = 30 -> DB member3
+        //member4 = 40 -> DB member4
+        //아래쿼리가 실행된 이후에는 DB 에는 오른쪽처럼 바뀌어 있고, 영속성 컨텍스트에는 왼쪽처럼 바뀌기 전이다.
+
+        //벌크연산은 영속성컨텍스트(1차캐시) 무시하고, 바로 DB에 있는 값을 바꾼다.
+        long count = queryFactory
+                .update(member)
+                .set(member.username, "비회원")
+                .where(member.age.lt(28))
+                .execute();
+
+        em.flush();
+        em.clear();
+
+        //DB 에서 데이터를 가져왔어도 영속성컨텍스트에 있으면 DB 에서 가져온걸 버림.
+        List<Member> result = queryFactory
+                .selectFrom(member)
+                .fetch();
+
+        //update 하기 전 데이터가 나온다. // em.flush(), em.clear() 추가하면 update 된 결과 나옴.
+        for (Member member1 : result) {
+            System.out.println("member1 = " + member1);
+        }
+    }
+
+    @Test
+    public void bulkAdd() {
+        long count = queryFactory
+                .update(member)
+                .set(member.age, member.age.add(1))
+                .execute();
+    }
+
+    @Test
+    public void bulkDelete() {
+        long count = queryFactory
+                .delete(member)
+                .where(member.age.gt(18))
+                .execute();
     }
 
 }
