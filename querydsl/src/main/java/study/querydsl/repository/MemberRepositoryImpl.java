@@ -114,6 +114,7 @@ public class MemberRepositoryImpl implements MemberRepositoryCustom{
 
 
 //        return new PageImpl<>(content, pageable, total);
+        //CountQuery 최적화. countQuery 가 필요하면 날리고, 아니면 안날리고.
         return PageableExecutionUtils.getPage(content, pageable, () -> countQuery.fetchCount());
     }
 
